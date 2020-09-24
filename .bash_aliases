@@ -16,3 +16,14 @@ function up() {
     levels=$(($levels -1))
   done
 }
+
+## Helper functions for qpdf library
+# Extract from {1} pages {2} save as {3}
+function pdfExtract () {
+  qpdf $1 --pages . $2 -- $3
+}
+
+# Extract every {1} pages from {2} save as {3}
+function pdfExtractEach () {
+  qpdf --split-pages=$1 $2 $3
+}
