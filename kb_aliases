@@ -8,5 +8,5 @@ alias kbd="kb delete --id"
 alias kbg="kb grep"
 alias kbt="kb list --tags"
 EOF
-echo "source ~/.kb_alias" >> ~/.bashrc
+echo "source ~/.kb_alias" >> ~/.bash_aliases
 source ~/.kb_alias
