@@ -1,0 +1,12 @@
+# Create useful aliases for kb
+cat <<EOF > ~/.kb_alias
+alias kbl="kb list"
+alias kbe="kb edit --id"
+alias kba="kb add"
+alias kbv="kb view --id"
+alias kbd="kb delete --id"
+alias kbg="kb grep"
+alias kbt="kb list --tags"
+EOF
+echo "source ~/.kb_alias" >> ~/.bashrc
+source ~/.kb_alias
