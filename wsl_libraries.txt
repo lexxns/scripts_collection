@@ -1,0 +1,4 @@
+Useful WSL Libraries:
+
+WSL Open - Set specific filetypes/links to open in Windows, can overwrite xdg-open globally
+kb (Knowledge Base) - Minimalist knowledge base manager (requires WSL Open)
