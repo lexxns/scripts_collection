@@ -19,6 +19,17 @@ alias pbpaste='xclip -selection clipboard -o'
 alias venv_new="python3 -m venv venv"
 alias venv="source venv/bin/activate"
 
+function cl() {
+    DIR="$*";
+        # if no DIR given, go home
+        if [ $# -lt 1 ]; then
+                DIR=$HOME;
+    fi;
+    builtin cd "${DIR}" && \
+    # use your preferred ls command
+        ls -F --color=auto
+}
+
 function up() {
   levels=$1
 
