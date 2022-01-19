@@ -1,12 +1,23 @@
-alias home='cd /mnt/c/Users/lexxn/'
 alias ll="ls -la"
-alias bashrc="sudo nano ~/.bashrc"
-alias crontab="sudo nano /etc/crontab/"
+alias bashrc="sudo micro ~/.bashrc"
+alias crontab="sudo micro /etc/crontab/"
 
 alias gh='history|grep'
 alias startgit='cd `git rev-parse --show-toplevel` && git checkout master && git pull'
 
+# Example call from WSL to Windows
 alias atom="/mnt/c/Windows/System32/cmd.exe /c 'atom'"
+
+# Kitty commands
+alias diff="kitty +kitten diff"
+
+# Implement pbcopy + paste
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
+
+# python venv
+alias venv_new="python3 -m venv venv"
+alias venv="source venv/bin/activate"
 
 function up() {
   levels=$1
