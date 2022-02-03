@@ -1,23 +1,25 @@
 alias ll="ls -la"
 alias bashrc="sudo micro ~/.bashrc"
+alias bashalias="sudo micro ~/.bash_aliases"
 alias crontab="sudo micro /etc/crontab/"
 
+# git
 alias gh='history|grep'
-alias startgit='cd `git rev-parse --show-toplevel` && git checkout master && git pull'
+alias startgit='cd `git rev-parse --show-toplevel` && git checkout main && git pull'
+alias cg='cd `git rev-parse --show-toplevel`'
 
-# Example call from WSL to Windows
-alias atom="/mnt/c/Windows/System32/cmd.exe /c 'atom'"
-
-# Kitty commands
-alias diff="kitty +kitten diff"
-
-# Implement pbcopy + paste
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 
 # python venv
-alias venv_new="python3 -m venv venv"
-alias venv="source venv/bin/activate"
+alias ve="python3.8 -m venv ./venv"
+alias va="source ./venv/bin/activate"
+
+#pip
+alias pi='pip install -r "requirements.txt"'
+
+# copy current directory path
+alias cpwd="pwd | tr -d '\n' | pbcopy && echo 'pwd copied to clipboard'"
 
 function cl() {
     DIR="$*";
@@ -37,6 +39,17 @@ function up() {
     cd ..
     levels=$(($levels -1))
   done
+}
+
+# socketcan
+function vcan_up () {
+	sudo modprobe vcan
+	sudo ip link add dev vcan0 type vcan
+	sudo ip link set vcan0 up
+}
+
+function vcan_down () {
+	sudo ip link set vcan0 down
 }
 
 ## Helper functions for qpdf library
