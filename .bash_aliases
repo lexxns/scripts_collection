@@ -21,6 +21,11 @@ alias pi='pip install -r "requirements.txt"'
 # copy current directory path
 alias cpwd="pwd | tr -d '\n' | pbcopy && echo 'pwd copied to clipboard'"
 
+alias esa="eval $(ssh-agent)"
+
+# What is my public ip address?
+alias whoami="dig +short txt ch whoami.cloudflare @1.0.0.1"
+
 function cl() {
     DIR="$*";
         # if no DIR given, go home
