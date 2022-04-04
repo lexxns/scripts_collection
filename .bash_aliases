@@ -28,7 +28,7 @@ alias whoami="dig +short txt ch whoami.cloudflare @1.0.0.1"
 
 alias dotenv="export $(grep -v \'^#\' .env | xargs)"
 
-docker rm -f $(docker ps -a -q)
+alias dockerrm="docker rm -f $(docker ps -a -q)"
 
 function cl() {
     DIR="$*";
