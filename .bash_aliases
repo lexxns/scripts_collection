@@ -71,3 +71,8 @@ function pdfExtract () {
 function pdfExtractEach () {
   qpdf --split-pages=$1 $2 $3
 }
+
+# Run some command {2} in docker container {1}
+function pod_run () {
+  nsenter -t $(docker inspect --format '{{ .State.Pid }}' $1) $2
+}
